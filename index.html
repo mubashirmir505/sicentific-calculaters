@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator">
+
+    <!-- Display -->
+    <section class="display">
+      <button id="historyBtn" class="history-btn" title="History" aria-label="History">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M13 3a9 9 0 0 0-9 9H1l3.9 3.9.1.1L9 12H6a7 7 0 1 1 2.05 4.95l-1.42 1.42A9 9 0 1 0 13 3zm-1 5v5l4.25 2.52.77-1.28-3.52-2.09V8H12z"/>
+        </svg>
+      </button>
+      <div id="expression" class="expression"></div>
+      <div id="result" class="result">0</div>
+    </section>
+
+    <!-- History panel -->
+    <section id="historyPanel" class="history-panel hidden">
+      <div class="history-head">
+        <span>History</span>
+        <button id="clearHistory">Clear history</button>
+      </div>
+      <ul id="historyList"></ul>
+    </section>
+
+    <!-- Keys -->
+    <section class="keys">
+      <!-- Row 1 -->
+      <div class="mode">
+        <button id="degBtn" class="active" data-action="deg">Deg</button>
+        <span></span>
+        <button id="radBtn" data-action="rad">Rad</button>
+      </div>
+      <button class="key fn" data-insert="!">x!</button>
+      <button class="key fn" data-insert="(">(</button>
+      <button class="key fn" data-insert=")">)</button>
+      <button class="key fn" data-insert="%">%</button>
+      <button id="acBtn" class="key fn" data-action="clear">AC</button>
+
+      <!-- Row 2 -->
+      <button id="invBtn" class="key fn" data-action="inv">Inv</button>
+      <button class="key fn" data-insert="sin(" data-inv-insert="sin⁻¹(" data-inv-label="sin<sup>−1</sup>">sin</button>
+      <button class="key fn" data-insert="ln(" data-inv-insert="e^(" data-inv-label="e<sup>x</sup>">ln</button>
+      <button class="key num" data-insert="7">7</button>
+      <button class="key num" data-insert="8">8</button>
+      <button class="key num" data-insert="9">9</button>
+      <button class="key fn" data-insert="÷">÷</button>
+
+      <!-- Row 3 -->
+      <button class="key fn" data-insert="π">π</button>
+      <button class="key fn" data-insert="cos(" data-inv-insert="cos⁻¹(" data-inv-label="cos<sup>−1</sup>">cos</button>
+      <button class="key fn" data-insert="log(" data-inv-insert="10^(" data-inv-label="10<sup>x</sup>">log</button>
+      <button class="key num" data-insert="4">4</button>
+      <button class="key num" data-insert="5">5</button>
+      <button class="key num" data-insert="6">6</button>
+      <button class="key fn" data-insert="×">×</button>
+
+      <!-- Row 4 -->
+      <button class="key fn" data-insert="e">e</button>
+      <button class="key fn" data-insert="tan(" data-inv-insert="tan⁻¹(" data-inv-label="tan<sup>−1</sup>">tan</button>
+      <button class="key fn" data-insert="√(" data-inv-insert="^2" data-inv-label="x<sup>2</sup>">√</button>
+      <button class="key num" data-insert="1">1</button>
+      <button class="key num" data-insert="2">2</button>
+      <button class="key num" data-insert="3">3</button>
+      <button class="key fn" data-insert="−">−</button>
+
+      <!-- Row 5 -->
+      <button class="key fn" data-action="ans">Ans</button>
+      <button class="key fn" data-insert="E">EXP</button>
+      <button class="key fn" data-insert="^">x<sup>y</sup></button>
+      <button class="key num" data-insert="0">0</button>
+      <button class="key num" data-insert=".">.</button>
+      <button class="key eq" data-action="equals">=</button>
+      <button class="key fn" data-insert="+">+</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
